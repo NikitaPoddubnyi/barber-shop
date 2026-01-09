@@ -1,0 +1,53 @@
+
+.inputError {
+  border: 2px solid #dc3545 !important;
+}
+
+.error {
+  color: #dc3545;
+  font-size: 14px;
+  margin-top: 5px;
+  display: block;
+  text-align: left !important;
+}
+
+// .timeSlot.error {
+//     border-color: #dc3545;
+//     background-color: #fff8f8;
+// }
+
+.timeSlots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.timeSlotError {
+    border-color: #dc3545 !important;
+    background-color: #fff8f8 !important;
+    
+   &:hover {
+       border-color: #dc3545 !important;
+       background-color: #fff8f8 !important;
+    }
+}
+
+.formError {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    border: 1px solid #f5c6cb;
+    text-align: center;
+}
+
+  .submitError {
+    color: #ff6b6b;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: rgba(255, 107, 107, 0.1);
+  }

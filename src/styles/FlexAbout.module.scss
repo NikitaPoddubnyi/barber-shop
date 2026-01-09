@@ -1,0 +1,185 @@
+.flexAbout {
+  background: #1a1a1a;
+  padding: 30px 20px 68px 20px;
+  color: #fff;
+
+  @media (min-width: 768px) {
+    padding: 60px 30px 60px 30px;
+  }
+}
+
+.flexAbout__contentTitle {
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 80px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+  transform: translateY(10%) perspective(500px) translateZ(-200px) scale(0.7);
+  filter: blur(2px);
+  transition: all 1s ease-in-out;
+
+  &.active {
+    opacity: 1;
+    transform: translateY(0) perspective(500px) translateZ(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.flexAboutFlex {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.flexAbout__img {
+  flex: 1;
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateX(-100%);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+
+            &.active {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+  img {
+    width: 100%;
+    height: calc(560px - 100px) * 1.2;
+    // margin: 0 auto;
+    display: block;
+    object-fit: cover;
+  }
+}
+
+.flexAbout__content {
+  flex: 1;
+  padding-top: 20px;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+
+  &.active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.phoneNumber {
+  display: inline-block;
+  font-size: 20px;
+  color: #B8A269;
+  font-weight: 700;
+  text-decoration: none;
+  margin-bottom: 0;
+}
+
+.flexAbout__content h3 {
+  font-size: 36px;
+  font-weight: 500;
+  margin-bottom: 30px;
+  position: relative;
+  margin-top: 20px;
+}
+
+.flexAbout__content h3::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 2px;
+  background: #B8A269;
+  margin-top: 20px;
+}
+
+.hours {
+  display: flex;
+  justify-content: space-between;
+  max-width: 300px;
+  margin-bottom: 20px;
+  font-size: 20px;
+
+  b {
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+  span {
+    font-size: 20px;
+    color: #ddd;
+  }
+}
+
+.barberDescription {
+  margin-top: 60px;
+  font-size: 16px;
+  color: #ffffff;
+  line-height: 1.6;
+
+  ::after {
+    content: "";
+    left: 50%;
+    transform: translateX(clamp(10%, 2vw, 20%));
+    display: block;
+
+    height: 3px;
+    background: #B8A269;
+    margin: 15px 0;
+     width: calc(280px + (100vw - 500px) * 0.2); 
+    
+    @media (max-width: 780px) {
+    width: calc(280px + (100vw - 501px) * 0.3); 
+  }
+}
+
+  i {
+    font-style: italic;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .flexAboutFlex {
+    flex-direction: column;
+    padding: 30px;
+  }
+
+  .flexAbout__contentTitle {
+    font-size: 36px;
+    margin-bottom: 50px;
+  }
+
+  .flexAbout__content {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 600px) {
+
+    .flexAboutFlex {
+    padding: 0px;
+  }
+
+  .flexAbout__contentTitle {
+    font-size: 28px;
+  }
+
+  .flexAbout__content h3 {
+    font-size: 26px;
+  }
+}
+
+
+@media (max-width: 1280px) {
+
+  .flexAbout__contentTitle,
+  .flexAbout__img,
+  .flexAbout__content {
+        transform: none !important;
+        opacity: 1 !important;
+        filter: none !important;
+        transition: none !important;
+  }
+  }

@@ -1,0 +1,101 @@
+.center {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 30px;
+  position: relative;
+  z-index: 2;
+}
+
+.header {
+  position: relative;
+  min-height: 750px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background-image: url('../assets/medium-shot-man-getting-haircut2-min.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  @media (max-width: 1024px) {
+    background-attachment: scroll;
+  }
+
+  @media (max-width: 820px) {
+    min-height: 500px;
+  }
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.title {
+  font-size: 90px;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(-300%);
+  transition: all 1.5s ease-in-out;
+
+  &.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+        @media (max-width: 1200px) {
+            font-size: 70px;
+        }
+
+        @media (max-width: 820px) {
+            font-size: 60px;
+        }
+
+        @media (max-width: 480px) {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+    }
+
+.description {
+  font-size: 20px;
+  line-height: 1.6;
+  max-width: 800px; 
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+  font-weight: 400;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(10%) perspective(500px) translateZ(-200px) scale(0.7);
+            filter: blur(2px);
+            transition: all 1.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.active {
+    opacity: 1;
+    transform: translateY(0) perspective(500px) translateZ(0) scale(1);
+    filter: blur(0);
+    }
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
+
+}
+
+
+@media (max-width: 1280px) {
+     p, h1
+    {
+        transform: none !important;
+        opacity: 1 !important;
+        filter: none !important;
+        transition: none !important;
+    }
+}

@@ -1,0 +1,163 @@
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #333; 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
+  padding: 0;
+  z-index: 10;
+  width: 350px;
+  max-width: 90vw;
+  overflow: hidden;
+  transform: translateX(120%);
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  border-left: 4px solid;
+  white-space: pre-line;
+  z-index: 10001;
+
+  &.visible {
+    transform: translateX(0);
+  }
+
+  &.hidden {
+    transform: translateX(120%);
+  }
+
+  &.success {
+    border-left-color: #28a745;
+    .notificationIcon {
+      color: #28a745;
+      background: rgba(40, 167, 69, 0.1);
+    }
+    .notificationProgressBar {
+      background: #28a745;
+    }
+  }
+
+  &.error {
+    border-left-color: #dc3545;
+    .notificationIcon {
+      color: #dc3545;
+      background: rgba(220, 53, 69, 0.1);
+    }
+    .notificationProgressBar {
+      background: #dc3545;
+    }
+  }
+
+    &.info {
+    border-left-color: #4fa6ac;
+    .notificationIcon {
+      color: #4fa6ac;
+      background: rgba(53, 195, 220, 0.1);
+    }
+    .notificationProgressBar {
+      background: #4fa6ac;
+    }
+  }
+
+}
+
+.notificationContent {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  gap: 12px;
+}
+
+.notificationIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+  flex-shrink: 0;
+  font-family: 'Montserrat', sans-serif; 
+}
+
+.notificationMessage {
+  flex: 1;
+  color: white;
+  font-size: 14px;
+  line-height: 1.4;
+  font-family: 'Montserrat', sans-serif; 
+  font-weight: 500;
+}
+
+.notificationClose {
+  background: none;
+  border: none;
+  color: #bbb; 
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s;
+  flex-shrink: 0;
+  font-family: 'Montserrat', sans-serif;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff; 
+  }
+}
+
+.notificationProgress {
+  height: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.notificationProgressBar {
+  height: 100%;
+  animation: progressBar linear forwards;
+
+  @keyframes progressBar {
+    from {
+      width: 100%;
+    }
+    to {
+      width: 0%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .notification {
+    width: 300px;
+    top: 10px;
+    right: 10px;
+    left: auto; 
+  }
+
+  .notificationContent {
+    padding: 12px;
+    gap: 10px;
+  }
+  
+  .notificationMessage {
+    font-size: 13px;
+  }
+  
+  .notificationIcon {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .notification {
+    width: calc(100vw - 20px);
+    right: 10px;
+    left: 10px;
+  }
+}

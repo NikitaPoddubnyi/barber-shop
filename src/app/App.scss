@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+body {
+  margin-top: 99px !important;
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #333;
+
+  @media (max-width: 1000px) {
+    margin-top: 78px !important;
+  }
+
+  @media (max-width: 820px) {
+    margin-top: 60px !important;
+  }
+
+  @media (max-width: 480px) {
+    margin-top: 40px !important;
+  }
+  
+}
+/* 
+ * {
+  margin: 0;
+}
+
+p{
+  color: white;
+} */
+
+html{
+  overflow-x: hidden !important;
+}
+
+::selection {
+  background-color: #B8A269; 
+  color: #ffffff; 
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Montserrat', sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #b8a269;
+    border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #c9b67a;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #a08d55;
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+.tableWrapper::-webkit-scrollbar {
+    height: 6px;
+}
+
+.tableWrapper::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.03);
+    margin: 0 2px;
+}
+
+.tableWrapper::-webkit-scrollbar-thumb {
+    background: rgba(184, 162, 105, 0.6);
+}
+
+.tableWrapper::-webkit-scrollbar-thumb:hover {
+    background: rgba(184, 162, 105, 0.8);
+}
+
+@media (max-width: 768px) {
+    ::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+    }
+    
+    .tableWrapper::-webkit-scrollbar {
+        height: 3px;
+    }
+    
+    .tableContainer {
+        padding-right: 30px;
+    }
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #b8a269 rgba(255, 255, 255, 0.05);
+}
+
+.tableWrapper {
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+@media (max-width: 480px) {
+    .tableWrapper,
+    .expandedServicesContainer,
+    .fullServicesList,
+    .orderAdditionalInfo {
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .tableWrapper {
+        touch-action: pan-x pan-y;
+    }
+}
+
+.expandedServicesContainer {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.expandedServicesContainer::-webkit-scrollbar {
+    width: 6px;
+}
+
+.expandedServicesContainer::-webkit-scrollbar-track {
+    background: rgba(184, 162, 105, 0.1);
+}
+
+.expandedServicesContainer::-webkit-scrollbar-thumb {
+    background: rgba(184, 162, 105, 0.4);
+}
+
+.fullServicesList {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.fullServicesList::-webkit-scrollbar {
+    width: 4px;
+}
+
+.modalContent {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.modalContent::-webkit-scrollbar {
+    width: 6px;
+}
+
+.cell,
+.tableRow,
+.expandedRow {
+    background: linear-gradient(
+        to right,
+        #333 0%,
+        #333 calc(100% - 8px),
+        transparent calc(100% - 8px),
+        transparent 100%
+    );
+}
+
+@media (max-width: 768px) {
+    .cell,
+    .tableRow,
+    .expandedRow {
+        background: linear-gradient(
+            to right,
+            #333 0%,
+            #333 calc(100% - 4px),
+            transparent calc(100% - 4px),
+            transparent 100%
+        );
+    }
+}
+
+.noScrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.noScrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
