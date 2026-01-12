@@ -381,6 +381,7 @@ const ModalBuy = ({ isOpen, onClose, onSubmit, services, onSuccess }) => {
     };
 
     const resetAndClose = () => {
+        localStorage.removeItem('formData');
         setFormData({
             name: '',
             email: '',

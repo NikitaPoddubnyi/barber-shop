@@ -132,6 +132,9 @@ const FormSection = () => {
                     email: '',
                     message: '',
                 });
+
+                    localStorage.removeItem('contactData');
+
                 
                 setTimeout(() => {
                     setIsSuccess(false);

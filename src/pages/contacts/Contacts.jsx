@@ -74,7 +74,7 @@ const Contacts = () => {
               </div>
               <div className={styles.hours}>
                 <b>СБ–ВС&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>{" "}
-                <span>09:00 – 19:00</span>
+                <span>09:00 – 18:00</span>
               </div>
               <p className={styles.barberDescription}>
                 <i>
