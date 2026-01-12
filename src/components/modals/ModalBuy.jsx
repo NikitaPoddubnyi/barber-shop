@@ -3,13 +3,21 @@ import styles from 'styles/Modals.module.scss';
 import stylesError from 'styles/Error.module.scss';
 import { useBodyScrollLock } from 'hooks/useBodyScrollLock';
 
+
+    const API_BASE_URL = "https://barbershop-3f2ae-default-rtdb.firebaseio.com";
+
 const ModalBuy = ({ isOpen, onClose, onSubmit, services, onSuccess }) => {
     const [isLoading, setIsLoading] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false); 
     const [selectedTime, setSelectedTime] = useState('');
     const [promoMessage, setPromoMessage] = useState('');
     const [bookedTimes, setBookedTimes] = useState([]);  
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState(() => {
+    const storedFormData = localStorage.getItem('formData');
+        if (storedFormData) {
+            return JSON.parse(storedFormData);
+        } else {
+         return {
         name: '',
         email: '',
         phone: '',
@@ -22,12 +30,20 @@ const ModalBuy = ({ isOpen, onClose, onSubmit, services, onSuccess }) => {
         privacyAccepted: false,
         marketingAccepted: false,
         specialRequests: ''
+        };
+    }
     });
     const [error, setError] = useState({});
     useBodyScrollLock(true);
 
-    const API_BASE_URL = "https://barbershop-3f2ae-default-rtdb.firebaseio.com";
-    
+    useEffect(() => {
+        // if (isOpen) {
+            localStorage.setItem('formData', JSON.stringify(formData));
+        // } else {
+        //     localStorage.removeItem('formData');
+        // }
+    }, [ formData]);
+
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const phoneRegex = /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/;
     const nameRegex = /^[A-Za-zА-Яа-яЄєЇїІіҐґ'’\s-]{3,30}$/;

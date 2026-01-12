@@ -16,7 +16,7 @@ const MainServicesSection = () => {
           <div className={styles.servicesGrid}>
 
             <div className={`${styles.serviceLeft} ${active7 ? styles.active : ""}`} ref={ref7}>
-              <img src={serviceImg} alt="Крій бороди"/>
+              <img src={serviceImg} alt="Крій бороди" loading="lazy"/>
             </div>
 
             <div className={`${styles.serviceRight}`}>

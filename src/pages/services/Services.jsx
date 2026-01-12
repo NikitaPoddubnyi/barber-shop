@@ -68,7 +68,7 @@ const Services = () => {
         ];
         setCategories(allCategories);
 
-        showNotification(`Всього завантажено: ${servicesArray.length} послуг`, 'success');
+        showNotification(`Завантажено: ${servicesArray.length} послуг`, 'success');
         
         setLoading(false);
       } catch (err) {
@@ -77,7 +77,7 @@ const Services = () => {
         setLoading(false);
         
         setServices(fallbackData.services || []);
-        showNotification(`Всього завантажено: ${fallbackData.services.length} послуг`, 'success');
+        showNotification(`Завантажено: ${fallbackData.services.length} послуг`, 'success');
         
         const allCategories = [
           { id: "all", name: "Всі послуги" },
@@ -342,6 +342,7 @@ const Services = () => {
                         onError={(e) => {
                           e.target.onerror = null;
                         }}
+                        loading="lazy"
                       />
                       {service.duration && (
                         <div className={styles.durationBadge}>

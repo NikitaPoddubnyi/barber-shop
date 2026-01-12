@@ -10,11 +10,22 @@ const FormSection = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
     const [error, setError] = useState({});
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        message: ''
+    const [formData, setFormData] = useState(() => {
+        const storedFormData = localStorage.getItem('contactData');
+        if (storedFormData) {
+            return JSON.parse(storedFormData);
+        } else {
+            return {
+                name: '',
+                email: '',
+                message: ''
+            };
+        }
     });
+
+    useEffect(() => {
+        localStorage.setItem('contactData', JSON.stringify(formData));
+    }, [formData]);
 
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
