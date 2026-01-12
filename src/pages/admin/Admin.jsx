@@ -5,8 +5,8 @@ import Footer from "components/footer";
 import stylestoLoad from "styles/Services.module.scss";
 import styles from "styles/Admin.module.scss";
 import { Link } from "react-router-dom";
-import OrdersSection from "components/sections/OrdersSection";
-import RecordsSection from "components/sections/RecordsSection";
+import OrdersSection from "components/sections/OrderSection/OrdersSection";
+import RecordsSection from "components/sections/RecordsSection/RecordsSection";
 import { useAdmin } from "utils/AdminUtils";
 import Notification from "components/modals/Notification";
 

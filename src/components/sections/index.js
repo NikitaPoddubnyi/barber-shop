@@ -1,17 +1,17 @@
-import AboutSection from "./AboutSection";
-import PricesSection from "./PricesSection";
-import StoriesSlider from "./StoriesSlider";
-import HeaderParallax from "./HeaderParallax";
-import FlexAbout from "./FlexAbout";
-import TextSlider from "./TextSlider";
-import BarbersSection from "./BarbersSection";
-import ServicesSection from "./ServicesSection";
-import DiscountSection from "./DiscountSection";
-import MainServicesSection from "./MainServicesSection";
-import OrdersSection from "./OrdersSection";
-import FormSection from "./FormSection";
-import RecordsSection from "./RecordsSection";
+import AboutSection from "./AboutSection/AboutSection";
+import PricesSection from "./PricesSection/PricesSection";
+import StoriesSlider from "./SliderSections/StoriesSlider";
+import HeaderParallax from "./HeaderAboutSection/HeaderParallax";
+import FlexAbout from "./FlexAboutSection/FlexAbout";
+import TextSlider from "./SliderSections/TextSlider";
+import BarbersSection from "./BarbersSection/BarbersSection";
+import ServicesSection from "./ServicesSection/ServicesSection";
+import DiscountSection from "./DiscountSection/DiscountSection";
+import MainServicesSection from "./ServicesSection/MainServicesSection";
+import OrdersSection from "./OrderSection/OrdersSection";
+import FormSection from "./FormSection/FormSection";
+import RecordsSection from "./RecordsSection/RecordsSection";
 
 
 export { AboutSection, PricesSection, StoriesSlider, HeaderParallax, FlexAbout, TextSlider,
-         BarbersSection, ServicesSection, DiscountSection, MainServicesSection, OrdersSection, FormSection };
+         BarbersSection, ServicesSection, DiscountSection, MainServicesSection, OrdersSection, RecordsSection, FormSection };

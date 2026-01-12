@@ -171,7 +171,7 @@ const handleModalSubmit = async (appointmentData) => {
                         />
                         <div>
                           <h3 className={styles.serviceTitle}>{item.title}</h3>
-                          <p className={styles.serviceDesc}>{item.description}</p>
+                          <p className={styles.serviceDesc}>{item.description.slice(0, 100)}...</p>
                         </div>
                       </article>
                     </div>

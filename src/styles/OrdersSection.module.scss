@@ -29,6 +29,12 @@
 .headerLeft {
     flex: 1;
     min-width: 200px;
+
+    @media (max-width: 980px) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
 
 .headerRight {
