@@ -27,6 +27,7 @@ const Services = () => {
   const [ref2, active2] = useScrollAnimation(0.7);
   const [ref3, active3] = useScrollAnimation(0.7);
   const [ref4, active4] = useScrollAnimation(0.9);
+  const servicesListRef = useRef(null);
   // const [ref5, active5] = useScrollAnimation(0.7);
   // const [ref6, active6] = useScrollAnimation(0.7);
   
@@ -124,8 +125,15 @@ const Services = () => {
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
-    window.scrollTo({ top: 1500, behavior: 'smooth' });
-  };
+    setTimeout(() => {
+      if (servicesListRef.current) {
+    servicesListRef.current.scrollIntoView({ 
+      behavior: 'smooth', 
+      block: 'start' 
+    });
+  }
+    }, 1)
+};
 
   const handleAddToCart = (service, e) => {
     try {
@@ -306,7 +314,7 @@ const Services = () => {
           </div>
         </section>
 
-        <section className={styles.servicesList}>
+        <section className={styles.servicesList} ref={servicesListRef}>
           <div className={styles.center}>
             <div className={styles.categoryInfo}>
               <h2>

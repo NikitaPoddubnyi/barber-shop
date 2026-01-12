@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styles from 'styles/OrdersSection.module.scss';
 
 const OrdersSection = ({ 
@@ -16,6 +16,7 @@ const OrdersSection = ({
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedPaymentMethod, setSelectedPaymentMethod] = useState('all');
     const [expandedOrders, setExpandedOrders] = useState(new Set());
+    const OrdersRef = useRef(null);
 
     const filteredData = data.filter(order => {
         if (filterStatus !== 'all') {
@@ -90,7 +91,14 @@ const OrdersSection = ({
 
       const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
-    window.scrollTo({ top: 880, behavior: 'smooth' });
+    setTimeout(() => {
+      if (OrdersRef.current) {
+        OrdersRef.current.scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'start' 
+        }, 1);
+      }
+    })
   };
 
     const handleViewClick = (orderId) => {
@@ -329,7 +337,7 @@ const OrdersSection = ({
     }
 
     return (
-        <section className={styles.ordersSection}>
+        <section className={styles.ordersSection} ref={OrdersRef}>
             <div className={styles.tableContainer}>
                 <div className={styles.tableHeader}>
                     <div className={styles.headerLeft}>

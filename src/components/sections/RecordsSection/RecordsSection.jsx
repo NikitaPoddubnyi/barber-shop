@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styles from 'styles/OrdersSection.module.scss';
 
 const RecordsSection = ({ data = [], isLoading = false, onDeleteRecord, onRefresh }) => {
@@ -7,6 +7,7 @@ const RecordsSection = ({ data = [], isLoading = false, onDeleteRecord, onRefres
     const [sortConfig, setSortConfig] = useState({ key: 'submittedAt', direction: 'desc' });
     const [searchTerm, setSearchTerm] = useState('');
     const [expandedMessages, setExpandedMessages] = useState(new Set());
+    const RecordsRef = useRef(null);
 
     const filteredData = data.filter(record => {
         if (searchTerm) {
@@ -50,10 +51,17 @@ const RecordsSection = ({ data = [], isLoading = false, onDeleteRecord, onRefres
         setCurrentPage(1);
     };
 
-          const handlePageChange = (pageNumber) => {
+    const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
-    window.scrollTo({ top: 880, behavior: 'smooth' });
-  };
+    setTimeout(() => {
+      if (RecordsRef.current) {
+    RecordsRef.current.scrollIntoView({ 
+      behavior: 'smooth', 
+      block: 'start' 
+    });
+  }
+    }, 1)
+};
 
     const toggleMessageExpansion = (id) => {
         setExpandedMessages(prev => {
@@ -160,7 +168,7 @@ const RecordsSection = ({ data = [], isLoading = false, onDeleteRecord, onRefres
     }
 
     return (
-        <section className={styles.recordsSection}>
+        <section className={styles.recordsSection} ref={RecordsRef}>
             <div className={styles.tableContainer}>
                 <div className={styles.tableHeader}>
                     <div className={styles.headerLeft}>
