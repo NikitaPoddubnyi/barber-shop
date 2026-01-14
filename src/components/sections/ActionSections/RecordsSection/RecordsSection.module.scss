@@ -1,0 +1,598 @@
+@use '../../../../styles/mixins.scss' as *;
+
+.recordsSection {
+    margin: 40px 0;
+
+    .tableContainer {
+        background: #333;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        padding: 25px;
+        color: white;
+    }
+
+    .tableHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 25px;
+        flex-wrap: wrap;
+        gap: 20px;
+        
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 15px;
+        }
+    }
+
+    .headerLeft {
+        flex: 1;
+        min-width: 200px;
+
+        @media (max-width: 980px) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    .headerRight {
+        flex-shrink: 0;
+    }
+
+    .title {
+        font-size: 24px;
+        font-weight: 600;
+        color: #b8a269;
+        margin: 0;
+        
+        .count {
+            font-size: 18px;
+            color: #bbb;
+            font-weight: 400;
+        }
+        
+        @media (max-width: 768px) {
+            font-size: 20px;
+        }
+    }
+
+    .headerActions {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .refreshBtn {
+        background: transparent;
+        border: 1px solid #b8a269;
+        border-radius: 50%;
+        color: #b8a269;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+        
+        &:hover {
+            background: rgba(184, 162, 105, 0.1);
+            transform: rotate(180deg);
+        }
+        
+        svg {
+            transition: transform 0.3s;
+        }
+    }
+
+    .tableControls {
+        margin-bottom: 20px;
+    }
+
+    .searchBox {
+        margin-bottom: 15px;
+        position: relative;
+    }
+
+    .searchInput {
+        width: 97%;
+        padding: 12px 15px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        font-size: 14px;
+        
+        &::placeholder {
+            color: #999;
+        }
+        
+        &:focus {
+            outline: none;
+            border-color: #b8a269;
+            background: rgba(255, 255, 255, 0.15);
+        }
+    }
+
+    .clearSearchBtn {
+        position: absolute;
+        right: 11%;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        color: #bbb;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        &:hover {
+            color: white;
+            background: rgba(255, 255, 255, 0.2);
+        }
+    }
+
+    .filtersRow {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        align-items: center;
+        
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 15px;
+        }
+    }
+
+    .filterGroup {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .filterLabel {
+        font-size: 14px;
+        color: #b8a269;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+
+    .filterButtons {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .filterBtn {
+        padding: 6px 12px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #bbb;
+        cursor: pointer;
+        font-size: 13px;
+        transition: all 0.3s;
+        white-space: nowrap;
+        
+        &:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        &.active {
+            background: #b8a269;
+            color: #1a1a1a;
+            border-color: #b8a269;
+            font-weight: 600;
+        }
+    }
+
+    .resetFiltersBtn {
+        background: transparent;
+        color: #dc3545;
+        border: 1px solid #dc3545;
+        padding: 6px 12px;
+        font-size: 13px;
+        cursor: pointer;
+        transition: all 0.3s;
+        white-space: nowrap;
+        
+        &:hover {
+            background: rgba(220, 53, 69, 0.1);
+        }
+    }
+
+    .tableWrapper {
+        overflow-x: auto;
+        margin-bottom: 20px;
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        
+        th {
+            background: rgba(255, 255, 255, 0.05);
+            color: #b8a269;
+            font-weight: 600;
+            text-align: left;
+            padding: 15px 12px;
+            border-bottom: 2px solid rgba(184, 162, 105, 0.3);
+            font-size: 14px;
+            white-space: nowrap;
+        }
+        
+        td {
+            padding: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 14px;
+            vertical-align: middle;
+        }
+    }
+
+    .sortableHeader {
+        cursor: pointer;
+        user-select: none;
+        transition: background-color 0.2s;
+        position: relative;
+        
+        &:hover {
+            background-color: rgba(184, 162, 105, 0.1);
+        }
+        
+        &.active {
+            background-color: rgba(184, 162, 105, 0.15);
+        }
+        
+        .sortArrow {
+            margin-left: 5px;
+            color: #b8a269;
+            font-weight: bold;
+            font-size: 12px;
+        }
+    }
+
+    .messageColumnHeader {
+        min-width: 300px;
+    }
+
+    .actionsHeader {
+        min-width: 150px;
+        text-align: center;
+    }
+
+    .tableRow {
+        transition: background-color 0.2s;
+        
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+        
+        &:last-child td {
+            border-bottom: none;
+        }
+    }
+
+    .cell {
+        .dateCell {
+            .dateValue {
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 500;
+                display: block;
+            }
+            
+            .timeSmall {
+                font-size: 11px;
+                color: #999;
+                display: block;
+                margin-top: 2px;
+            }
+        }
+        
+        .nameCell {
+            .nameValue {
+                font-weight: 500;
+                display: block;
+            }
+            
+            .emailSmall {
+                font-size: 11px;
+                color: #999;
+                display: block;
+                margin-top: 2px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                max-width: 150px;
+            }
+        }
+        
+        .phoneLink {
+            color: #20c997;
+            text-decoration: none;
+            display: block;
+            
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        
+        .emailLink {
+            color: #20c997;
+            text-decoration: none;
+            display: block;
+            
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .messageCell {
+            .messageContent {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .messagePreview {
+                line-height: 1.5;
+                color: #ddd;
+            }
+            
+           
+        }
+    }
+
+    .actionButtons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+        width: 100%;
+        
+        .replyBtn,
+        .deleteBtn {
+            width: 100%;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 10px;
+            font-size: 12px;
+            white-space: nowrap;
+            overflow: hidden;
+            border: none;
+            transition: all 0.2s;
+            
+            svg {
+                flex-shrink: 0;
+                margin-right: 4px;
+            }
+        }
+        
+        .replyBtn {
+            background: rgba(32, 201, 151, 0.15);
+            border: 1px solid rgba(32, 201, 151, 0.3);
+            color: #20c997;
+            
+            &:hover {
+                background: rgba(32, 201, 151, 0.25);
+            }
+        }
+        
+        .deleteBtn {
+            background: rgba(220, 53, 69, 0.15);
+            border: 1px solid rgba(220, 53, 69, 0.3);
+            color: #dc3545;
+            
+            &:hover {
+                background: rgba(220, 53, 69, 0.25);
+            }
+        }
+    }
+
+    .emptyTable {
+        text-align: center;
+        padding: 60px 20px;
+        color: #bbb;
+        
+        p {
+            margin: 0 0 20px 0;
+            font-size: 16px;
+        }
+    }
+
+    .noResults {
+        text-align: center;
+        padding: 40px 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        
+        p {
+            color: #bbb;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+    }
+
+    .resetButton {
+        background: transparent;
+        color: #b8a269;
+        border: 1px solid #b8a269;
+        padding: 8px 16px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 0.3s;
+        
+        &:hover {
+            background: rgba(184, 162, 105, 0.1);
+        }
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        flex-wrap: wrap;
+        gap: 15px;
+        
+        @media (max-width: 768px) {
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+
+    .paginationInfo {
+        font-size: 14px;
+        color: #bbb;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .pageNumbers {
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap;
+    }
+
+    .pageButton {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #bbb;
+        padding: 6px 12px;
+        min-width: 36px;
+        height: 36px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        &:hover:not(:disabled) {
+            background: rgba(184, 162, 105, 0.1);
+            color: rgba(255, 255, 255, 0.8);
+            border-color: #b8a269;
+        }
+        
+        &:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        &.active {
+            background: #b8a269;
+            color: #1a1a1a;
+            border-color: #b8a269;
+            font-weight: 600;
+        }
+        
+        &.prevButton,
+        &.nextButton {
+            min-width: 80px;
+            
+            @media (max-width: 768px) {
+                min-width: 60px;
+            }
+        }
+    }
+
+    .pageDots {
+        color: #999;
+        padding: 6px 5px;
+        font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+        .tableContainer {
+            padding: 15px;
+        }
+        
+        .filterButtons {
+            justify-content: center;
+        }
+        
+        .pageButton {
+            padding: 5px 10px;
+            min-width: 32px;
+            height: 32px;
+            font-size: 13px;
+        }
+        
+        .messageColumnHeader {
+            min-width: 200px;
+        }
+        
+        .actionButtons {
+            grid-template-columns: 1fr;
+            gap: 4px;
+            
+            .replyBtn, .deleteBtn {
+                height: 32px;
+                font-size: 11px;
+                padding: 0 6px;
+                
+                svg {
+                    margin-right: 3px;
+                    width: 12px;
+                    height: 12px;
+                }
+            }
+        }
+        
+        .messageCell {
+            .messageContent {
+                align-items: flex-start;
+            }
+            
+            .expandMessageBtn {
+                align-self: stretch;
+                text-align: center;
+            }
+        }
+    }
+
+     .expandMessageBtn {
+                margin-top: 10px;
+                background: transparent;
+                border: 1px solid rgba(184, 162, 105, 0.3);
+                color: #b8a269;
+                padding: 4px 10px;
+                font-size: 12px;
+                cursor: pointer;
+                transition: all 0.3s;
+                align-self: flex-start;
+                
+                &:hover {
+                    background: rgba(184, 162, 105, 0.1);
+                }
+            }
+
+    @media (max-width: 480px) {
+        .searchInput {
+            width: 90%;
+        }
+        
+        .clearSearchBtn {
+            right: 15px;
+        }
+    }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.refreshing {
+    svg {
+        animation: spin 1s linear infinite;
+    }
+}

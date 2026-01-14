@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import styles from 'styles/OrdersSection.module.scss';
+import styles from './RecordsSection.module.scss';
 
 const RecordsSection = ({ data = [], isLoading = false, onDeleteRecord, onRefresh }) => {
     const [currentPage, setCurrentPage] = useState(1);

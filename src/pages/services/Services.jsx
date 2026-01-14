@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Nav from "components/nav";
 import Footer from "components/footer";
-import styles from "styles/Services.module.scss";
+import styles from "./Services.module.scss";
 import { addToCart } from "utils/cartUtils";
 import fallbackData from 'data/data.json';
 import ServicesButton from "components/buttons/ServicesButton";

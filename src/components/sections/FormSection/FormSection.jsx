@@ -1,4 +1,4 @@
-import styles from "styles/Contacts.module.scss";
+import styles from "./FormSection.module.scss";
 import React, { useState, useEffect } from "react";
 import { useScrollAnimation } from "hooks/useScrollAnimation";
 import stylesError from "styles/Error.module.scss";

@@ -1,6 +1,6 @@
 import { NavLink, Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
-import styles from "styles/Nav.module.scss";
+import styles from "./Nav.module.scss";
 import { logo } from "assets";
 import NavButton from "components/buttons/NavButton";
 

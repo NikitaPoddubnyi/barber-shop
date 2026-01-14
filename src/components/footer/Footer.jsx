@@ -1,5 +1,5 @@
 import {logo2, call} from 'assets';
-import styles from 'styles/Footer.module.scss';
+import styles from './Footer.module.scss';
 import { FooterButton } from 'components/buttons';
 
 

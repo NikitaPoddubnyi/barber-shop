@@ -1,4 +1,4 @@
-import styles from "styles/DiscountSection.module.scss";
+import styles from "./DiscountSection.module.scss";
 // import styleMain from "styles/Main.module.scss";
 import { useScrollAnimation } from "hooks/useScrollAnimation";
 import DiscountButton from "components/buttons/DiscountButton";

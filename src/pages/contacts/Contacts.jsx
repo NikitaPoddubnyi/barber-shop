@@ -1,7 +1,7 @@
 import Nav from "components/nav";
 import Footer  from "components/footer";
 import React, { useState, useEffect, useCallback, useRef } from "react";
-import styles from "styles/Contacts.module.scss";
+import styles from "./Contacts.module.scss";
 import { logo2, slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide8 } from "assets";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";

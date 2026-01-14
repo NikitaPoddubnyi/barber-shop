@@ -1,5 +1,5 @@
 import Slider from "react-slick";
-import styles from "styles/StoriesSlider.module.scss";
+import styles from "./StoriesSlider.module.scss";
 import { slide1, slide2, slide3, slide4, slide5, slide6 } from "assets";
 import { useScrollAnimation } from "hooks/useScrollAnimation";
 

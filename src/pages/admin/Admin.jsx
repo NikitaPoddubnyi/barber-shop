@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import Nav from "components/nav";
 import Footer from "components/footer";
-import stylestoLoad from "styles/Services.module.scss";
-import styles from "styles/Admin.module.scss";
+// import styles from "styles/Services.module.scss";
+import styles from "./Admin.module.scss";
 import { Link } from "react-router-dom";
-import OrdersSection from "components/sections/OrderSection/OrdersSection";
-import RecordsSection from "components/sections/RecordsSection/RecordsSection";
+import OrdersSection from "components/sections/ActionSections/OrdersSection/OrdersSection";
+import RecordsSection from "components/sections/ActionSections/RecordsSection/RecordsSection";
 import { useAdmin } from "utils/AdminUtils";
 import Notification from "components/modals/Notification";
 
@@ -390,8 +390,8 @@ const Admin = () => {
     return (
       <>
         <Nav />
-        <div className={stylestoLoad.loading}>
-          <div className={stylestoLoad.spinner}></div>
+        <div className={styles.loading}>
+          <div className={styles.spinner}></div>
           <p>Перевірка доступу...</p>
         </div>
         <Footer />
@@ -405,8 +405,8 @@ const Admin = () => {
     <title>Панель адміністратора</title>
 
         <Nav />
-        <div className={stylestoLoad.loading}>
-          <div className={stylestoLoad.spinner}></div>
+        <div className={styles.loading}>
+          <div className={styles.spinner}></div>
           <p>Завантаження даних...</p>
         </div>
         <Footer />
@@ -419,16 +419,16 @@ const Admin = () => {
       <>
     <title>Панель адміністратора</title>
         <Nav />
-        <div className={stylestoLoad.errorContainer}>
-          <div className={stylestoLoad.center}>
+        <div className={styles.errorContainer}>
+          <div className={styles.center}>
             <h2>{error}</h2>
             <button
               onClick={fetchData}
-              className={stylestoLoad.retryButton}
+              className={styles.retryButton}
             >
               Спробувати знову
             </button>
-            <Link to="/" className={stylestoLoad.backButton}>
+            <Link to="/" className={styles.backButton}>
               На головну
             </Link>
           </div>

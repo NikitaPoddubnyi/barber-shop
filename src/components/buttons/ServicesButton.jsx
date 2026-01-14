@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import styles from "styles/Buttons.module.scss";
+import styles from "./Buttons.module.scss";
 import { useScrollAnimation } from "hooks/useScrollAnimation";
 
 const ServicesButton = () => {

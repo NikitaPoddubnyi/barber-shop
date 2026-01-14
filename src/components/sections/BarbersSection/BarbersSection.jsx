@@ -1,6 +1,6 @@
 
 import React from 'react';
-import styles from 'styles/BarbersSection.module.scss';
+import styles from './BarbersSection.module.scss';
 import styleMain from "styles/About.module.scss";
 import { barber1, barber2, barber3, barber4, barber5, barber6 } from 'assets';
 import { useScrollAnimation } from 'hooks/useScrollAnimation';

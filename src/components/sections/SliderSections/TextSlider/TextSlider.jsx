@@ -1,5 +1,5 @@
 import Slider from "react-slick";
-import styles from "styles/TextSlider.module.scss";
+import styles from "./TextSlider.module.scss";
 import styleMain from "styles/About.module.scss";
 import { useScrollAnimation } from "hooks/useScrollAnimation";
 

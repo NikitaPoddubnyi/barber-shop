@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import styles from 'styles/Notification.module.scss';
+import styles from './Notification.module.scss';
 
 const Notification = ({ message, type = 'info', duration = 3000, onClose }) => {
   const [isVisible, setIsVisible] = useState(true);

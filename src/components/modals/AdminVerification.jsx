@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { useAdmin } from 'utils/AdminUtils';
 import Nav from 'components/nav';
 import Footer from 'components/footer';
-import styles from 'styles/Modals.module.scss';
+import styles from './Modals.module.scss';
 import { useBodyScrollLock } from 'hooks/useBodyScrollLock';
 
 const AdminVerification = () => {

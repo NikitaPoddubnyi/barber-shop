@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import styles from "styles/ServicesSection.module.scss";
+import styles from "./ServicesSection.module.scss";
 import styleMain from "styles/About.module.scss";
 import {beardImg, shaveImg, colorImg, cutImg} from "assets";
 import { useScrollAnimation } from "hooks/useScrollAnimation";

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Nav from "components/nav";
 import Footer from "components/footer";
-import styles from "styles/Cart.module.scss";
+import styles from "./Cart.module.scss";
 import { getCartItems, removeFromCart, updateQuantity, clearCart, calculateTotal } from "utils/cartUtils";
 import ModalBuy from "components/modals/ModalBuy";
 

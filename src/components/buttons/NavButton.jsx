@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import styles from "styles/Buttons.module.scss";
+import styles from "./Buttons.module.scss";
 import { getCartCount } from "utils/cartUtils";
 import { useState, useEffect } from "react";
 

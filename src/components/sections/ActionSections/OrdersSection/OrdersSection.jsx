@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import styles from 'styles/OrdersSection.module.scss';
+import styles from './OrdersSection.module.scss';
 
 const OrdersSection = ({ 
   data = [], 

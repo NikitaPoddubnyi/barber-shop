@@ -1,4 +1,4 @@
-import styles from 'styles/HeaderParallax.module.scss';
+import styles from './HeaderParallax.module.scss';
 import HeaderButtonAbout from "components/buttons/HeaderButtonAbout";
 import { useScrollAnimation } from 'hooks/useScrollAnimation';
 

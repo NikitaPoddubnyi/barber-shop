@@ -4,7 +4,7 @@ import Nav from 'components/nav';
 import Footer from 'components/footer';
 import { addToCart } from 'utils/cartUtils';
 import fallbackData from 'data/data.json';
-import styles from 'styles/Service.module.scss';
+import styles from './Service.module.scss';
 import Notification from "components/modals/Notification";
 
 const API_BASE_URL = 'https://barbershop-3f2ae-default-rtdb.firebaseio.com';

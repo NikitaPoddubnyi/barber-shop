@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import styles from 'styles/Modals.module.scss';
+import styles from './Modals.module.scss';
 import stylesError from 'styles/Error.module.scss';
 
 const AppointmentModal = ({ isOpen, onClose, onSubmit }) => {

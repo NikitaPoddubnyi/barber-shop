@@ -1,4 +1,4 @@
-import styles from "styles/FlexAbout.module.scss";
+import styles from "./FlexAbout.module.scss";
 import React from "react";
 import  {serviceImg} from "assets";
 import styleMain from "styles/About.module.scss";

@@ -1,4 +1,4 @@
-import styles from "styles/MainServices.module.scss";
+import styles from "./MainServices.module.scss";
 import styleMain from "styles/Main.module.scss";
 import { useScrollAnimation } from "hooks/useScrollAnimation";
 import {beard, serviceImg, cuts, shaving, child} from "assets";
