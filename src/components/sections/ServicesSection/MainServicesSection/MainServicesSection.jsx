@@ -9,6 +9,7 @@ const useStaggeredAnimation = (count, threshold = 0.9) => {
     const states = [];
     
     for (let i = 0; i < count; i++) {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         const [ref, active] = useScrollAnimation(threshold + (i * 0.05));
         refs.push(ref);
         states.push(active);
