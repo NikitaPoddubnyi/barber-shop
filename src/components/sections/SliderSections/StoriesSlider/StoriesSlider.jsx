@@ -1,3 +1,4 @@
+import React, { useMemo } from "react";
 import Slider from "react-slick";
 import styles from "./StoriesSlider.module.scss";
 import { slide1, slide2, slide3, slide4, slide5, slide6 } from "assets";
@@ -49,7 +50,7 @@ export default function StoriesSlider() {
   const [slideTitleRef, slideTitleActive] = useScrollAnimation(0.9);
   const [slideDescriptionRef, slideDescriptionActive] = useScrollAnimation(0.9);
 
-  const settings = {
+ const settings = useMemo(() => ({
     dots: false,
     infinite: true,
     speed: 600,
@@ -71,10 +72,11 @@ export default function StoriesSlider() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          arrows: false, 
         },
       },
     ],
-  };
+  }), []);
 
   return (
     <section className={styles.storiesSection}>
