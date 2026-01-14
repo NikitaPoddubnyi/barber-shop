@@ -84,7 +84,7 @@ const Admin = () => {
               }];
             }
 
-            return {
+            const dataObj = {
               id: key,
               processed: order.processed || false,
               name: name,
@@ -104,7 +104,9 @@ const Admin = () => {
               appointmentId: order.appointmentId || '',
               createdAt: order.createdAt || new Date().toISOString(),
               updatedAt: order.updatedAt || null
-            };
+            }
+
+            return dataObj;
           })
         : [];
 
@@ -137,13 +139,14 @@ const Admin = () => {
       const recordsArray = recordsData
         ? Object.keys(recordsData).map((key) => {
             const record = recordsData[key];
-            return {
+            const data ={
               id: key,
               name: record.name || '',
               email: record.email || '',
               message: record.message || '',
               submittedAt: record.submittedAt || record.createdAt || new Date().toISOString(),
-            };
+            }
+            return data;
           })
         : [];
 

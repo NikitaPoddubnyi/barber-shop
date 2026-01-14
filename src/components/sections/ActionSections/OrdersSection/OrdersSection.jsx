@@ -175,7 +175,8 @@ const OrdersSection = ({
         
         const avgOrderValue = totalOrders > 0 ? totalRevenue / totalOrders : 0;
         
-        return {
+        const processedOrdersData = 
+            {
             totalOrders,
             processedOrders,
             notProcessedOrders,
@@ -183,7 +184,9 @@ const OrdersSection = ({
             cardOrders,
             totalRevenue,
             avgOrderValue: avgOrderValue.toFixed(2)
-        };
+            }
+            
+        return processedOrdersData;
     };
     
     const stats = calculateStats();

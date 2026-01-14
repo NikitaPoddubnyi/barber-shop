@@ -134,8 +134,6 @@ const RecordsSection = ({ data = [], isLoading = false, onDeleteRecord, onRefres
         }
     };
 
-
-
     if (isLoading) {
         return (
             <div className={styles.tableContainer}>
