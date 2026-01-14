@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState, useRef, useEffect } from "react";
 import Slider from "react-slick";
 import styles from "./StoriesSlider.module.scss";
 import { slide1, slide2, slide3, slide4, slide5, slide6 } from "assets";
@@ -49,8 +49,11 @@ export default function StoriesSlider() {
   const [sliderRef, sliderActive] = useScrollAnimation(0.3);
   const [slideTitleRef, slideTitleActive] = useScrollAnimation(0.9);
   const [slideDescriptionRef, slideDescriptionActive] = useScrollAnimation(0.9);
+  
+  const [isMounted, setIsMounted] = useState(false);
+  const sliderInstanceRef = useRef(null);
 
- const settings = useMemo(() => ({
+  const settings = useMemo(() => ({
     dots: false,
     infinite: true,
     speed: 600,
@@ -65,6 +68,7 @@ export default function StoriesSlider() {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
+          arrows: true,
         },
       },
       {
@@ -72,11 +76,37 @@ export default function StoriesSlider() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          arrows: false, 
+          arrows: false,
         },
       },
     ],
+    ref: (slider) => {
+      sliderInstanceRef.current = slider;
+    }
   }), []);
+
+  useEffect(() => {
+    setIsMounted(true);
+    const timer = setTimeout(() => {
+      if (sliderInstanceRef.current) {
+        sliderInstanceRef.current.slickPlay();
+        sliderInstanceRef.current.slickGoTo(0);
+      }
+    }, 100);
+
+    const handleResize = () => {
+      if (sliderInstanceRef.current) {
+        sliderInstanceRef.current.slickPlay();
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <section className={styles.storiesSection}>
@@ -101,6 +131,7 @@ export default function StoriesSlider() {
         className={`${styles.sliderWrapper} ${
           sliderActive ? styles.active : ""
         }`}
+        style={{ opacity: isMounted ? 1 : 0 }}
       >
         <Slider {...settings} className={styles.slider}>
           {slides.map((slide) => (
