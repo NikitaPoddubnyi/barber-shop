@@ -159,8 +159,6 @@ const Service = () => {
     );
   }
 
-
-
   const relatedServices = getRelatedServices();
 
   return (
