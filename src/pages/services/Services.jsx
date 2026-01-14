@@ -28,8 +28,8 @@ const Services = () => {
   const [ref3, active3] = useScrollAnimation(0.7);
   const [ref4, active4] = useScrollAnimation(0.9);
   const servicesListRef = useRef(null);
-  // const [ref5, active5] = useScrollAnimation(0.7);
-  // const [ref6, active6] = useScrollAnimation(0.7);
+  const [ref5, active5] = useScrollAnimation(0.7);
+  const [ref6, active6] = useScrollAnimation(0.7);
   
   const [notification, setNotification] = useState({
     show: false,
@@ -429,12 +429,12 @@ const Services = () => {
             <span>Якісна продукція</span>
           </div>
 
-          <div className={`${styles.advantageCard} ${active2 ? styles.active : ''}`} ref={ref2}>
+          <div className={`${styles.advantageCard} ${active5 ? styles.active : ''}`} ref={ref5}>
             <img src={tools} alt="Якісне обладнання" />
             <span>Якісне обладнання</span>
           </div>
 
-          <div className={`${styles.advantageCard} ${active2 ? styles.active : ''}`} ref={ref2}>
+          <div className={`${styles.advantageCard} ${active6 ? styles.active : ''}`} ref={ref6}>
             <img src={hipsterBurber} alt="Професійні перукарі" />
             <span>Професійні перукарі</span>
           </div>
