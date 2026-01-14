@@ -201,7 +201,7 @@ const Service = () => {
           <div className={styles.serviceDetail}>
             <div className={styles.serviceImageContainer}>
               <img 
-                src={`${service.img}`}
+                src={service.img}
                 alt={service.title}
                 onError={(e) => {
                   e.target.onerror = null;
@@ -272,7 +272,7 @@ const Service = () => {
                   <div key={related.firebaseId || related.id} className={styles.relatedCard}>
                     <div className={styles.relatedImage}>
                       <img 
-                        src={`${related.img}`}
+                        src={related.img}
                         alt={related.title}
                         onError={(e) => {
                           e.target.onerror = null;
