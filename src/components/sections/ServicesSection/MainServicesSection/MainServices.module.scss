@@ -311,15 +311,3 @@
         }
     }
 }
-
-@media (max-width: 1280px) {
-    .serviceLeft,
-    .servicesDescription,
-    h2,
-    .serviceCard {
-        transform: none !important;
-        opacity: 1 !important;
-        filter: none !important;
-        transition: none !important;
-    }
-}

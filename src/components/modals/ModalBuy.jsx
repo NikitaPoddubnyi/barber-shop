@@ -13,7 +13,7 @@ const ModalBuy = ({ isOpen, onClose, onSubmit, services, onSuccess }) => {
     const [promoMessage, setPromoMessage] = useState('');
     const [bookedTimes, setBookedTimes] = useState([]);  
     const [formData, setFormData] = useState(() => {
-    const storedFormData = localStorage.getItem('formData');
+    const storedFormData = sessionStorage.getItem('formData');
         if (storedFormData) {
             return JSON.parse(storedFormData);
         } else {
@@ -38,7 +38,7 @@ const ModalBuy = ({ isOpen, onClose, onSubmit, services, onSuccess }) => {
 
     useEffect(() => {
         // if (isOpen) {
-            localStorage.setItem('formData', JSON.stringify(formData));
+            sessionStorage.setItem('formData', JSON.stringify(formData));
         // } else {
         //     localStorage.removeItem('formData');
         // }
@@ -381,7 +381,7 @@ const ModalBuy = ({ isOpen, onClose, onSubmit, services, onSuccess }) => {
     };
 
     const resetAndClose = () => {
-        localStorage.removeItem('formData');
+        sessionStorage.removeItem('formData');
         setFormData({
             name: '',
             email: '',

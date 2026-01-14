@@ -11,7 +11,7 @@ const FormSection = () => {
     const [isSuccess, setIsSuccess] = useState(false);
     const [error, setError] = useState({});
     const [formData, setFormData] = useState(() => {
-        const storedFormData = localStorage.getItem('contactData');
+        const storedFormData = sessionStorage.getItem('contactData');
         if (storedFormData) {
             return JSON.parse(storedFormData);
         } else {
@@ -24,7 +24,7 @@ const FormSection = () => {
     });
 
     useEffect(() => {
-        localStorage.setItem('contactData', JSON.stringify(formData));
+        sessionStorage.setItem('contactData', JSON.stringify(formData));
     }, [formData]);
 
 
@@ -133,7 +133,7 @@ const FormSection = () => {
                     message: '',
                 });
 
-                    localStorage.removeItem('contactData');
+                sessionStorage.removeItem('contactData');
 
                 
                 setTimeout(() => {

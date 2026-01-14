@@ -291,29 +291,3 @@ position: relative;
     background: #444;
   }
 }
-
-@media (max-width: 1280px) {
-   .HeaderButton {
-    transform: none !important;
-     opacity: 1 !important;
-     transition: none !important;
-  }
-
-  .discountButton{
-    transform: none !important;
-     opacity: 1 !important;
-     transition: none !important;
-  }
-
-  .preFooterButton{
-    transform: none !important;
-     opacity: 1 !important;
-     transition: none !important;
-  }
-
-  .HeaderButtonAbout{
-    transform: none !important;
-     opacity: 1 !important;
-     transition: none !important;
-  }
-}

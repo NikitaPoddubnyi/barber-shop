@@ -180,18 +180,3 @@
   @keyframes spin {
     to { transform: rotate(360deg); }
   }
-
-
-@media (max-width: 1280px) {
-  .title,
-  .contactContent,
-  .flexAbout__content,
-  .flexAbout__contentTitle,
-  .flexAbout__img{
-    transform: none !important;
-    opacity: 1 !important;
-    filter: none !important;
-    transition: none !important;
-  }
-
-}
