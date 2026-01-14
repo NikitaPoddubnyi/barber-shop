@@ -1145,35 +1145,35 @@ html {
     }
 }
 
-@media (max-width: 1280px) {
-    .headerContent p,
-    .headerContent h1,
-    .headerContent,
-    .barberCard.img1,
-    .barberCard.img2,
-    .logoBlock,
-    .barberWorkHours,
-    .workHoursTitle,
-    .aboutContent,
-    .aboutContent .readMoreButton,
-    .aboutImage,
-    .serviceLeft,
-    .servicesDescription,
-    h2,
-    .serviceCard,
-    .discountTitle,
-    .discountDescription,
-    .priceItem {
-        transform: none !important;
-        opacity: 1 !important;
-        filter: none !important;
-        transition: none !important;
-    }
+// @media (max-width: 1280px) {
+//     .headerContent p,
+//     .headerContent h1,
+//     .headerContent,
+//     .barberCard.img1,
+//     .barberCard.img2,
+//     .logoBlock,
+//     .barberWorkHours,
+//     .workHoursTitle,
+//     .aboutContent,
+//     .aboutContent .readMoreButton,
+//     .aboutImage,
+//     .serviceLeft,
+//     .servicesDescription,
+//     h2,
+//     .serviceCard,
+//     .discountTitle,
+//     .discountDescription,
+//     .priceItem {
+//         transform: none !important;
+//         opacity: 1 !important;
+//         filter: none !important;
+//         transition: none !important;
+//     }
 
-    .barberWorkHours {
-        right: 0 !important;
-    }
-}
+//     .barberWorkHours {
+//         right: 0 !important;
+//     }
+// }
 
 @keyframes fadeIn {
     from {

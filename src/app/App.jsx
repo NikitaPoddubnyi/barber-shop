@@ -1,6 +1,6 @@
 import './App.scss';
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom"; 
 import { AdminProvider } from 'utils/AdminUtils'; 
 import About from "pages/about";
 import Main from "pages/main";
@@ -16,7 +16,7 @@ import AdminVerification from 'components/modals/AdminVerification';
 function App() {
   return (
     <AdminProvider> 
-      <BrowserRouter>
+      <HashRouter>
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Main />} />
@@ -26,10 +26,11 @@ function App() {
           <Route path="/admin" element={<Admin />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="service/:id" element={<Service />} />
-          <Route path="/Contacts" element={<Contacts />}/>
+          <Route path="/contacts" element={<Contacts />}/>
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <ScrollToTopButton />
-      </BrowserRouter>
+      </HashRouter>
     </AdminProvider>
   );
 }
