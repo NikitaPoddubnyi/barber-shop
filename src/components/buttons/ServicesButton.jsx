@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./Buttons.module.scss";
 import { useScrollAnimation } from "hooks/useScrollAnimation";
 
 const ServicesButton = () => {
+    const navigate = useNavigate();
     const [ref1, active1] = useScrollAnimation(0.9);
     const handleClick = () => {
-        window.location.href = '/cart';
+        navigate("/cart");
     };
 
     return (
