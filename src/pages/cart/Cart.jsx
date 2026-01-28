@@ -135,6 +135,7 @@ const handleModalSubmit = async (appointmentData) => {
 
   return (
     <>
+    <title>Кошик</title>
       <Nav />
         <header className={styles.pageHeader}>
                     <div className={styles.center}>
